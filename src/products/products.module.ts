@@ -1,8 +1,11 @@
 import { Module } from '@nestjs/common';
 import { ProductsController } from './products.controller';
 import { ProductsService } from './products.service';
-
+import { MongooseModule } from '@nestjs/mongoose';
+import { ProductSchema } from './product.model';
+//MongooseModule.forFeature() allows you to inject a model into any file you need it in
 @Module({
+    imports: [MongooseModule.forFeature([{name: 'Product', schema: ProductSchema}])],
     controllers: [ProductsController],
     providers: [ProductsService]
 })
