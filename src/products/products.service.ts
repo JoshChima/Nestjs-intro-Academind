@@ -1,6 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Product } from './product.model';
-import uuid = require('uuid-random');
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose'
 
